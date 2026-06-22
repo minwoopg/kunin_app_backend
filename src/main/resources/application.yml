@@ -11,7 +11,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/kunin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     username: root
-    password: 1234
+    password: 5425
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

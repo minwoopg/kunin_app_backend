@@ -33,8 +33,7 @@ public class Product {
     @Column(nullable = false, length = 200)
     private String description;
 
-    @Lob
-    @Column(name = "detail_description")
+    @Column(name = "detail_description", columnDefinition = "TEXT")
     private String detailDescription;
 
     @Column(name = "image_url")
