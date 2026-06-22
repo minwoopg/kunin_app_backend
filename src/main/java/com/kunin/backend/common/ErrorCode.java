@@ -12,6 +12,7 @@ public enum ErrorCode {
 
     // 상품
     PRODUCT_NOT_FOUND(HttpStatus.NOT_FOUND, "상품을 찾을 수 없습니다."),
+    PRODUCT_SOLD_OUT(HttpStatus.BAD_REQUEST, "품절된 상품입니다."),
 
     // 카테고리
     CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND, "카테고리를 찾을 수 없습니다."),
@@ -20,7 +21,11 @@ public enum ErrorCode {
     EMAIL_ALREADY_EXISTS(HttpStatus.CONFLICT, "이미 사용 중인 이메일입니다."),
     LOGIN_FAILED(HttpStatus.UNAUTHORIZED, "이메일 또는 비밀번호가 올바르지 않습니다."),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "사용자를 찾을 수 없습니다."),
-    UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "로그인이 필요합니다.");
+    UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "로그인이 필요합니다."),
+
+    // 장바구니
+    CART_ITEM_NOT_FOUND(HttpStatus.NOT_FOUND, "장바구니 항목을 찾을 수 없습니다."),
+    CART_QUANTITY_EXCEEDED(HttpStatus.BAD_REQUEST, "재고 수량을 초과했습니다.");
 
     private final HttpStatus status;
     private final String message;
