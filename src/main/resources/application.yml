@@ -23,6 +23,7 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false       # open-in-view 경고 제거
 
   sql:
     init:
@@ -33,6 +34,14 @@ springdoc:
     path: /swagger-ui.html
   api-docs:
     path: /v3/api-docs
+
+# ─────────────────────────────────────────
+#  JWT 설정
+#  secret: 최소 32자 이상의 랜덤 문자열 (실제 배포 시 환경변수로 관리)
+# ─────────────────────────────────────────
+jwt:
+  secret: KIP2026-kunin-backend-jwt-secret-key-minimum-32chars
+  expiration-ms: 86400000   # 24시간 (ms)
 
 logging:
   level:

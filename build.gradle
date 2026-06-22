@@ -19,16 +19,21 @@ repositories {
 }
 
 dependencies {
-    // Web (Spring Boot 4: spring-boot-starter-web -> spring-boot-starter-webmvc)
+    // Web
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-    // Security (1차 단계: /api/** 전체 허용 설정만 적용, JWT는 추후 구현)
+    // Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
     // JPA + MySQL
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -36,7 +41,7 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
-    // Swagger (Spring Boot 4 호환 버전 - 3.0.1은 Jackson 2/3 충돌 이슈가 있어 3.0.3 사용)
+    // Swagger (Spring Boot 4 호환 버전)
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.3'
 
     // Test
